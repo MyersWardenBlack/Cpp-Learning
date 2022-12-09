@@ -1,4 +1,4 @@
-# Cpp-learning
-C++学习过程笔记 + 刷题心得和技巧
+C++学习过程
+学习笔记 + 手打代码 + 刷题心得
 
 https://www.bilibili.com/video/BV1et411b73Z?p=2&vd_source=d6e98bfbf092d35a05a01a054deb4122
