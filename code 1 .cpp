@@ -270,6 +270,107 @@ int max(int a,int b)            //（函数的定义）这一行移上去，加�
 
 
 
+//const修饰指针
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 10;
+    int b = 20;
+    int * p = &a;
+    *p = 30;
+    cout<<a<<endl;
+    p = &b;
+    *p = 90;
+    cout<<b<<endl;
+
+    return 0;
+}
+
+
+
+//使用指针循环输出数组元素
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+    int * p =arr;		//arr 就代表数组的首地址
+    for(int i = 0; i < 10; i++)		//循环输出数组的元素
+    {
+        cout<<*p<<" ";
+        p++;
+    }
+    return 0;
+}
+
+
+
+
+//适用地址传递会改变实参
+
+#include <iostream>
+using namespace std;
+
+void swap(int * p1, int * p2)
+{
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+int main()
+{
+    int a = 10;
+    int b = 20;
+    swap(&a, &b);
+    cout<<a<<" "<<b<<endl;
+}
+
+
+
+//冒牌排序 + 数组 + 指针
+
+#include <iostream>
+using namespace std;
+
+void bubblesort(int * arr, int len)         //参数1是数组首地址，参数2是数组长度
+{
+    for(int i = 0; i <len - 1 ; i++)
+    {
+        for(int j = 0; j < len-i-1; j++)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+
+    }
+
+    for(int i = 0; i <len ; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+
+int main()
+{
+    int arr[10] = {4,3,6,9,1,2,10,8,7,5};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    bubblesort(arr,len);        //传入数组名，表示首地址
+
+    return 0 ;
+}
+
+
+
+
+
+
 
 
 
