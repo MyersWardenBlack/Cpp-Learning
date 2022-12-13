@@ -369,94 +369,92 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+结构体数组
+
+#include <iostream>
+#include <string>
+using namespace std;
+//首先应该先定义结构体
+struct student
+{
+    string name;
+    int age;
+    int score;
+};
+
+int main()
+{
+    //结构体数组
+    struct student arr[3] =
+            {
+            {"张三",19,65},
+            {"lisi", 20,90},
+            {"wangwu",18,85}
+
+            };
+    //结构体数组元素赋值
+    arr[1].name = "李四";
+    arr[2].name = "王五";
+    //遍历结构体数组
+    for(int i = 0; i < 3; i++)
+    {
+        cout<<arr[i].name<<" "<<arr[i].age<<" "<<arr[i].score<<endl;
+    }
+    return 0;
+}
+
+
+
+//结构体指针
+
+#include <iostream>
+#include <string>
+using namespace std;
+struct student {
+    string name;
+    int age;
+    int score;
+};
+
+int main()
+{
+    struct student s[3] = {{"zhangsan",19,66},{"lisi",18,79},{"wanngwu",19,99}};
+    struct student * p = &s[0];
+    struct student * p1 = &s[2];
+    cout<<p->name<<" "<<p->age<<endl;
+    cout<<p1->name<<" "<<p->score<<endl;
+    return 0;
+}
+
+
+
+//结构体做函数参数
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct student
+{
+    string name;
+    int age;
+    int score;
+};
+
+void PRINTNAME(struct student * stu)
+{
+    cout<<stu->name<<" "<<stu->age<<" "<<stu->score<<" "<<endl;
+}
+
+int main()
+{
+    struct student stu;
+    stu.name = "zhangsan";
+    stu.age = 19;
+    stu.score = 90;
+
+    PRINTNAME(&stu);
+
+    return 0;
+}
