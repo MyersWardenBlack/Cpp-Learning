@@ -1,3 +1,4 @@
+//蓝桥杯集训营
 //快速排序
 
 void quick_sort(int s[],int l, int r)   //l is left, r is right
