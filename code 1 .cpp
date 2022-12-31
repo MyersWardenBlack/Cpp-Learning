@@ -458,3 +458,46 @@ int main()
 
     return 0;
 }
+
+
+
+
+//设计英雄结构体包括姓名年龄性别，创建结构体数组包括五人，冒泡排序输出年龄从小到大的
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct hero{
+   string name;
+   int age;
+   string gender;
+};
+
+int main()
+{
+   struct hero arr[5] = {
+           {"liubei",23,"nan"},
+           {"guanyu",22,"nan"},
+           {"zhangfei",20,"nan"},
+           {"zhaoyun",21,"nan"},
+           {"diaochan",19,"nv"}
+   };
+   for(int i = 0; i < 4; i++)
+   {
+       for(int j = 0; j < 5-i-1; j++)
+       {
+           if(arr[j].age > arr[j+1].age)
+           {
+               struct hero temp = arr[j];
+               arr[j] = arr[j+1];
+               arr[j+1] = temp;
+           }
+       }
+   }
+
+   for(int i = 0; i < 5; i++)
+   {
+       cout<<arr[i].name<<" "<<arr[i].age<<" "<<arr[i].gender<<endl;
+   }
+   return 0;
+}
