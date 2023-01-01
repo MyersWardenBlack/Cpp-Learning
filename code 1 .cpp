@@ -501,3 +501,24 @@ int main()
    }
    return 0;
 }
+
+
+
+
+
+//九进制转十进制
+//https://www.lanqiao.cn/problems/2095/learning/
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  string s = "2022";
+  int ans = 0;
+  for(int i = 0; i < s.size(); i++)
+  {
+    ans = ans*9 + s[i]-'0';
+  }
+  cout<<ans<<endl;
+  return 0;
+}
